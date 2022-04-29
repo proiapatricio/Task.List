@@ -1,0 +1,10 @@
+<!--El botón recibe un texto como input y lo muestra. Ese input es el texto agregado a la clase text cuando llamamos al boton en el header.
+Además le agregamos un estilo, que también se lo pasamos como input desde el header, cambiando el color del boton. Todo esto sirve para reutilizar el botón.
+Llamo a la función onClick() que la defino en el componente button -->
+<button 
+  class="btn" 
+  [ngStyle]="{'background-color': color}"
+  (click)="onClick()"
+>
+  {{text}}
+</button>
