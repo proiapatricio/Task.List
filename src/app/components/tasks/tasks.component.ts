@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 //Importo la lista de tareas y la interfase
-import {Task} from '../../Task'
-import {TASKS} from '../../mock-tasks'
+import {Task} from '../../Task';
+import {TASKS} from '../../mock-tasks';
 
 @Component({
   selector: 'app-tasks',
