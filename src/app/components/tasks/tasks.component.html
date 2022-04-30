@@ -1,0 +1,7 @@
+<!--Llamo al componente tasks-item, y para cada uno de los elementos de la listaTareas voy a ponerlo como propiedad de tareaItem, que pertenece 
+al componente app-tasks-item, es decir, va armando una lista y se lo pasa a tasks-item  -->
+<app-tasks-item 
+    *ngFor="let tarea of listaTareas"
+    [tareaItem] = 'tarea'
+>
+</app-tasks-item>
