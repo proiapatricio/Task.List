@@ -1,9 +1,12 @@
+<!--reemplazamos el color del boton  de 'add task' de si esta en true vamos a mostralo en rojo y si es false en verde, lo mismo en texto.
+Por otro lado le agregamos que si el router es igual a la direccion del componente, que se muestre el boton, sino no, Si tiene '/', se muestra-->
 <header>
     <h1>{{title}}</h1>
     <app-button 
-       color="green" 
-       text="Add Task"
+       color="{{ showAddTask ? 'red' : 'green' }}"
+       text="{{ showAddTask ? 'Close' : 'Add' }}"
        (btnClick)="toggleAddTask()"
+       *ngIf ="hasRoute('/')"
     >
     </app-button>
 </header>

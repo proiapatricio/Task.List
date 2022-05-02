@@ -1,7 +1,17 @@
+<!--Agrego el componente que será para agregar alguna tarea, que recibirá el evento emitido por add-task-->
+<app-add-task
+  (onAddTarea)="addTask($event)"
+>
+</app-add-task>
+
 <!--Llamo al componente tasks-item, y para cada uno de los elementos de la listaTareas voy a ponerlo como propiedad de tareaItem, que pertenece 
-al componente app-tasks-item, es decir, va armando una lista y se lo pasa a tasks-item  -->
+al componente app-tasks-item, es decir, va armando una lista y se lo pasa a tasks-item.
+El componente hijo tasks-item va a emitir una función hacia este componente padre (onDeleteTarea), asi que cuando se mande esa orden se va a 
+ejecutar la funcion deleteTarea, definida en el controlador  -->
 <app-tasks-item 
-    *ngFor="let tarea of listaTareas"
-    [tareaItem] = 'tarea'
+    *ngFor="let task of taskList"
+    [taskItem] = 'task'
+    (onDeleteTask)="deleteTask(task)"
+    (onToggleReminder)="toggleReminder(task)"
 >
 </app-tasks-item>

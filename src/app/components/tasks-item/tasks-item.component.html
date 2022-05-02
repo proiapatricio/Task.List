@@ -1,12 +1,17 @@
 <!--Accedo a los tributos de tareaItem, que viene de Tasks-->
-<div class="task">
+<div 
+  class="task"
+  [ngClass]="{ reminder: taskItem.reminder }"
+  (click)="onToggle(taskItem)"
+
+>
     <h3>
-        {{tareaItem.text}}
+        {{taskItem.text}}
         <fa-icon 
           [icon]="faCircleXmark"
           [ngStyle]="{'color':'red'}"
-
+          (click)="onDelete(taskItem)"
         ></fa-icon>
     </h3>
-    <p>{{tareaItem.day}}</p>
+    <p>{{taskItem.day}}</p>
 </div>
