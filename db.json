@@ -1,22 +1,28 @@
 {
   "tasks": [
     {
-      "text": "Poner el lavarropas",
-      "day": "mañana",
-      "reminder": true,
-      "id": 1
-    },
-    {
-      "text": "Secuestrar al chuni",
-      "day": "ahoraa!",
-      "reminder": true,
-      "id": 2
-    },
-    {
-      "text": "Nueva tarea",
-      "day": "hoy",
+      "text": "Estudiar Angular",
+      "day": "2022-05-07T09:00",
       "reminder": false,
-      "id": 3
+      "id": 10
+    },
+    {
+      "text": "Implementar mejoras",
+      "day": "2022-05-08T21:00",
+      "reminder": false,
+      "id": 11
+    },
+    {
+      "text": "Seguir con el portfolio",
+      "day": "2022-05-07T09:00",
+      "reminder": false,
+      "id": 13
+    },
+    {
+      "text": "Seguir con Bootstrap",
+      "day": "2022-05-09T18:00",
+      "reminder": false,
+      "id": 14
     }
   ]
 }

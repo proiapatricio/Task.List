@@ -3,6 +3,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { UiService } from '../../service/ui.service';
 import {Subscription} from 'rxjs';
 import { Task } from '../../Task';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-add-task',
@@ -15,7 +16,7 @@ export class AddTaskComponent implements OnInit {
 
   //defino un texto, un dia y un reminder que luego vamos a recibir de entrada
   text: string= "";
-  day: string= "";
+  day: Date= new Date();
   reminder: boolean = false;
   showAddTarea: boolean = false;
   subscription? : Subscription;
@@ -33,16 +34,21 @@ export class AddTaskComponent implements OnInit {
 
   //la funcion hará que salte un cartel si no hay nada en el campo tarea cuando se aprete el botón de save task.
   //Ademas guardo los campos de los inputs en newTask y lo emito hacia afuera, que lo va a recibir el componente tasks
-  onSubmit(){
+  onSubmit(formulario: NgForm){
     if(this.text.length === 0){
       alert('Please add a task');
       return
+    }
+    //como el valor por defecto del reminder es null, y este esta represenatando un booleano, le asigno false 
+    if (this.reminder === null){
+      this.reminder= false;
     }
 
     const {text, day, reminder} = this
     const newTask={ text, day, reminder}
 
     this.onAddTarea.emit(newTask);
+    formulario.resetForm();
   }
 
 }

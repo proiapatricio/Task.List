@@ -22,19 +22,30 @@ export class TasksItemComponent implements OnInit {
   //Llamo al icono que voy a usar (le pongo el mismo nombre)
   faCircleXmark = faCircleXmark;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
+    //Cada vez que haya una tarea que este a 24 horas o menos para el vencimiento, el reminder va a ser true
+   this.calculoDiffHoras(this.taskItem);
   }
   //Creo el método onDelete que va a recibir un parámetro del tipo Task y lo va a eliminar. Esto lo va a emitir al componente padre, en 
   //este caso es tasks
   onDelete(task: Task){
     this.onDeleteTask.emit(task);
-    console.log(task)
   }
 
   onToggle(task: Task){
     this.onToggleReminder.emit(task);
+  }
+
+  calculoDiffHoras(tarea: Task){
+    let today = new Date().getTime();
+    let diaTarea = new Date(tarea.day).getTime();
+    let diff = diaTarea - today;
+    let diffInHours = Math.floor(diff/(1000*3600));
+    if (diffInHours <= 24 && tarea.reminder === false){
+      tarea.reminder = true;
+    }
   }
 
 }

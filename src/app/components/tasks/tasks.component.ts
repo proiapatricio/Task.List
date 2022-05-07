@@ -49,10 +49,10 @@ export class TasksComponent implements OnInit {
 
   //recibimos la tarea emitida por add-task y llamamos al servicio para pasarsela y que la agregue a la base de datos
   addTask(task: Task){
-    console.log(task);
     this.taskService.addTask(task).subscribe((task)=>(
       this.taskList.push(task)
     ));
   }
 
+  
 }

@@ -50,5 +50,8 @@ export class TaskService {
     return this.http.post<Task>(this.apiUrl, task, httpOptions);
    }
 
+   //automaticReminder(task: Task): Observable<Task> {
+ //    return console.log()
+  // }
 
 }

@@ -13,5 +13,5 @@
           (click)="onDelete(taskItem)"
         ></fa-icon>
     </h3>
-    <p>{{taskItem.day}}</p>
+    <p>{{taskItem.day | date:'d MMM yyyy'}}, {{taskItem.day | date:'HH:mm'}} hs.</p>
 </div>

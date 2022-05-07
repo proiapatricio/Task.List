@@ -2,8 +2,9 @@
 en el boton onSubmit. Además tendrá la directiva que si showAddTarea es true, se muestra el formulario,sino no-->
 
 <form 
+#formulario="ngForm"
 class="add-form" 
-(ngSubmit)="onSubmit()"
+(ngSubmit)="onSubmit(formulario)"
 *ngIf="showAddTarea"
 >
     <div class="form-control">
@@ -15,9 +16,9 @@ class="add-form"
 
     <div class="form-control">
         <label for="text"> Day & Time</label>
-        <input type="text" name="day" id="day" placeholder="Add day & Time"
-        [(ngModel)]="day"
-        />
+            <input type="datetime-local" name="day" id="day" placeholder="Add day & Time"
+             [(ngModel)]="day"
+            />
     </div>
 
     <div class="form-control form-control-check">

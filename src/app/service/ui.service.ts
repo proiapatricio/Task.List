@@ -11,9 +11,8 @@ export class UiService {
 
   constructor() { }
 
-  //creamos una funcion 
+  //creamos una funcion para que el botón cambie de estado. Esto se va a llamar en el header, donde se encuentra el boton
   toggleAgregarTarea(): void{
-    console.log('agregar tarea del servicio')
     this.showAddTask = !this.showAddTask;
     this.subject.next(this.showAddTask);
   }
